@@ -133,19 +133,22 @@ end
 
 def get_data_from_player(player_name, data)
   all_players = get_all_players
-
-  all_players.reduce(nil) do |result, player_data|
-    if(player_data[:player_name] == player_name)
-      result = player_data[data]
-    end
-
-    result
+  
+  all_players.find do |i| 
+    i[:player_name] == player_name
+    
   end
 end
 
 def num_points_scored(player_name)
-  get_data_from_player(player_name, :points)
-end
+  all_players = get_all_players
+  all_players.find do |i|
+    if i == player_name
+          i[:points]
+    
+        end 
+     end 
+  end
 
 def shoe_size(player_name)
   get_data_from_player(player_name, :shoe)
