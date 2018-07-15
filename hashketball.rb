@@ -143,7 +143,7 @@ end
 def num_points_scored(player_name)
   all_players = get_all_players
   all_players.find do |i|
-    binding.pry
+    
     if i == player_name
           
     
